@@ -10,7 +10,7 @@ spec:
   sources:
     - repoURL: https://github.com/pen-pal/migrate-helm-chart-to-argocd.git
       targetRevision: main
-      path: apps/values/pgadmin
+      path: argocd/apps/values/pgadmin
       helm:
         version: v3
         releaseName: pgadmin
