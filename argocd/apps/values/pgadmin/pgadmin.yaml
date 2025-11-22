@@ -1,0 +1,24 @@
+pgadmin4:
+  replicaCount: 1
+  env:
+    email: email@demo.com
+    password: SuperSecretPassword
+    enhanced_cookie_protection: "False"
+  service:
+    type: ClusterIP
+    clusterIP: ""
+    loadBalancerIP: ""
+    port: 80
+    targetPort: 80
+    portName: http
+  serviceAccount:
+    create: true
+    automountServiceAccountToken: true
+  persistentVolume:
+    enabled: true
+    annotations: {}
+    accessModes:
+      - ReadWriteOnce
+    size: 10Gi
+    subPath: ""
+  extraVolumes: []

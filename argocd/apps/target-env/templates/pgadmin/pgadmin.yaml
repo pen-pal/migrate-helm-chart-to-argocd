@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pgadmin
+  namespace: argocd
+spec:
+  project: default
+  revisionHistoryLimit: 2
+
+  sources:
+    - repoURL: https://github.com/pen-pal/migrate-helm-chart-to-argocd.git
+      targetRevision: main
+      path: apps/values/pgadmin
+      helm:
+        version: v3
+        releaseName: pgadmin
+        valueFiles:
+        - pgadmin.yaml
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: pgadmin
+
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 2
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 2m0s

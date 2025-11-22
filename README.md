@@ -1,5 +1,8 @@
-# Repository Structure
-.
+# Repository
+
+### infrastructure structure
+```
+infra
 ├── data.tf
 ├── eks-variables.tf
 ├── eks.tf
@@ -26,3 +29,22 @@
 ├── variables.tf
 ├── version.tf
 └── vpc.tf
+```
+
+### argocd apps structure
+```
+argocd
+├── apps
+│   ├── target-env
+│   │   ├── Chart.yaml
+│   │   ├── templates
+│   │   │   └── pgadmin
+│   │   │       ├── _helpers.tpl
+│   │   │       └── pgadmin.yaml
+│   │   └── values.yaml
+│   └── values
+│       └── pgadmin
+│           ├── Chart.yaml
+│           └── pgadmin.yaml
+├── controller.yaml
+```
