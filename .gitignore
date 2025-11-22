@@ -38,8 +38,6 @@ terraform.rc
 
 .terraform
 .terraform.lock.hcl
-backend.tf
-bootsrap.sh
 cleanup-vars.tf
 nodegroups.tf.bk
 outputs.tf
