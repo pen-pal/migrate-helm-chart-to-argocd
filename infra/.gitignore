@@ -1,0 +1,13 @@
+.terraform
+.terraform.lock.hcl
+backend.tf
+bootsrap.sh
+cleanup-vars.tf
+nodegroups.tf.bk
+outputs.tf
+secrets-manager.tf
+terraform.auto.tfvars.bk
+terraform.auto.tfvars.old
+terraform.auto.tfvars.org
+variables.tf
+version.tf
